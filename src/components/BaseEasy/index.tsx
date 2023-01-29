@@ -36,7 +36,7 @@ export default function BaseEasy({ children, title, nav }) {
                 }
                 ]}
 
-                canonical='https://easyimobiliario.com.br'
+                canonical='https://www.easyimobiliario.com.br'
                 openGraph={{
                     type: 'website',
                     url: 'https://easyimobiliario.com.br/',
