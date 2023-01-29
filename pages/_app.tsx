@@ -92,8 +92,8 @@ export default function App({ Component, pageProps }) {
 
       <Head>
      
-        <link rel="canonical" href="https://easyimobiliario.com.br" />
-         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.easyimobiliario.com.br" />
+        <link rel="icon" href="/favicon.ico" />
 
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
