@@ -84,7 +84,7 @@ export default function App({ Component, pageProps }) {
       <SocialProfileJsonLd
         type="Person"
         name="Easy Bank Imobiliário"
-        url="https://easyimobiliario.com.br/"
+        url="https://www.easyimobiliario.com.br"
         sameAs={[
           'https://www.instagram.com/easybankgame/',
         ]}
