@@ -29,10 +29,64 @@ Um projeto portfólio que realmente funciona , com ele você pode criar salas e 
 <br/>
 
 ## 🖼️ Site
-![pagina inicial do Easy imobiliário game](/public/image/home%20page.png)
+![pagina inicial do Easy imobiliário game](/public/comojogar/home_page.png)
 
 <br/>
 
 ## 🎲 Como Jogar
+### 📜Criar sala
+<p>
+  Clique em criar sala e selecione o valor inicial para cada jogador. Em alguns jogos recomenda-se a quantia inicial de 2.558.000. Em seguida selecione seu nome e sua cor. Abaixo estará o código da sala para você compartilhar com seus amigos. Clique novamente em criar sala para ir para a sala do jogo (ao criar a sala você se tornará automaticamente o banco no jogo)
+</p>
+
+![pagina inicial do Easy imobiliário game](/public/comojogar/Criar_sala.png)
+
+<hr>
+
+### 📜Entrar na sala
+<p>
+  Coloque o código da sala e clique em entrar na sala. Após isso selecione sua cor e seu nome e avance em iniciar game.
+</p>
+
+![pagina inicial do Easy imobiliário game](/public/comojogar/se_tiver_o_codigo.png)
+
+<hr>
+
+### 📜Como fazer transferência
+<p>
+ Clique no botão transferir e aparecerá uma tela onde você deve selecionar entre transferir para o banco ou para alguns de seus amigos.
+</p>
+
+![pagina inicial do Easy imobiliário game](/public/comojogar/Transferencia.png)
+
+<hr>
+
+### 📜Como transferir sendo banco
+<p>
+ Ative o modo banco, em "ON" e selecione transferir. Aparecerá uma tela onde você deve selecionar para quem será a transferência.
+</p>
+
+![pagina inicial do Easy imobiliário game](/public/comojogar/Banco_on.png)
+
+
+<hr>
+
+### 📜Como transferir a responsabilidade do banco
+<p>
+  Se você for banco pode clicar no botão "Passar o Bastão" e escolher quem será o próximo felizardo a ter que ser o banco.
+</p>
+
+![pagina inicial do Easy imobiliário game](/public/comojogar/Transfere_banco.png)
+
+<hr>
+
+### 📜Como compartilha a sala
+<p>
+ Pelo navegador Copie a URL e mande para seu amigo, no mobile ao lado do Código da sala terá um ícone para compartilhamento
+</p>
+
+![pagina inicial do Easy imobiliário game](/public/comojogar/compartilhar.png)
+
+<hr>
 
 
