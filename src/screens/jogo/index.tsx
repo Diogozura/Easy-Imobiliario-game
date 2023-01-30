@@ -74,7 +74,7 @@ export default function Jogo({ children, ...props }, ctx = null) {
         await Share.share({
             title: 'Easy imobiliário game',
             text: 'Entre na sala com seus amigos',
-            url: `https://easyimobiliario.com.br/${token}`,
+            url: `https://easyimobiliario.com.br/sala/${token}`,
             dialogTitle: 'Compartilhe com seus amigos',
         })
             .then(() => console.log('Successful share'))
