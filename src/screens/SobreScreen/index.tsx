@@ -8,7 +8,7 @@ import { useRef } from 'react';
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
 import React from "react"
 import Link from "next/link"
-import { Divider } from "@mui/material"
+import { Divider, Typography } from "@mui/material"
 import { Frontinfos, Infos } from "./styled"
 import { SubTitulo } from "../HomeScreen/styledHome"
 import Head from "next/head"
@@ -89,15 +89,22 @@ export default function Sobre() {
             </Texto>
 
             <Titulo>Quem Somos?</Titulo>
-
+           
             <Texto style={{
                 maxWidth: '600px',
                 textAlign: 'center',
                 padding: '20px',
                 margin: 'auto',
             }}>
-                Somos desenvolvedores da 2eSes tecnology , um projeto que temos como objetivo ajudar seu negocio alavancar, questões de automação e site é com a gente , se quer um projeto pessoa entre em contato
+                Somos desenvolvedores da 2eSes tecnology , um projeto que temos como objetivo ajudar seu negocio alavancar, questões de automação e site é com a gente , se quer um projeto pessoa entre em contato .
+              
+               
             </Texto>
+            <Typography sx={{textAlign:'center', margin:'auto'}}>
+           
+            <Link href={'https://github.com/Diogozura/Easy-Imobiliario-game#easy-imobiliário-game'}><FontAwesomeIcon icon={faGithub} className="fa-4x"  /></Link> 
+            </Typography>
+          
             <SubTitulo>Para mais informações clique nos cards</SubTitulo>
 
             <div style={{'margin':'auto', 'display':'flex',"justifyContent": "space-around", 'flexWrap': 'wrap' }}>
