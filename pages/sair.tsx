@@ -156,7 +156,7 @@ export default function Sair({ data }, ctx) {
     }
     const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false) ;
+  const handleClose = () => router.push(`/sala/${cookie.chave}`) ;
  
     React.useEffect(() => {
         handleOpen()
@@ -164,8 +164,6 @@ export default function Sair({ data }, ctx) {
     
     return (
         <>
-
-   
       <Modal
         keepMounted
         open={open}
