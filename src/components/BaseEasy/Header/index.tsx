@@ -39,7 +39,7 @@ const navItems = [{
 },
 {
   id: 2,
-  label: 'Regras',
+  label: 'Guia de uso',
   path: '/guia',
   // icon: HomeIcon
 },
@@ -48,7 +48,7 @@ const navItems = [{
   label: 'Sobre',
   path: '/sobre',
   // icon: HomeIcon
-}
+  }
 ];
 function HideOnScroll(props: Props) {
   const { children, window } = props;
@@ -66,7 +66,7 @@ function HideOnScroll(props: Props) {
   );
 }
 
-export default function Topo({ children, nav }, props: Props) {
+export default function Topo({ children, nav , sala}, props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const router = useRouter()
@@ -110,7 +110,16 @@ export default function Topo({ children, nav }, props: Props) {
           </ListItem>
 
         ))}
-       
+        {sala ? <ListItem disablePadding>
+        <ListItemButton sx={{ textAlign: 'center' }}>
+          <Navigation  href={'/sair'} prefetch={true}>
+            Sair
+          </Navigation>
+
+        </ListItemButton>
+      </ListItem> : null}
+        
+
       </List>
     </Box>
   );
@@ -203,6 +212,7 @@ export default function Topo({ children, nav }, props: Props) {
          
 
         ))}
+       
   
       </Nav>
     </>

@@ -15,6 +15,8 @@ import ShareIcon from '@mui/icons-material/Share';
 import { theme } from "../../../pages/_app";
 import Head from "next/head";
 import Script from "next/script";
+import Link from "next/link";
+import { LinkBotoa } from "../../components/Botao";
 
 const BoxJogadores = styled.section`
     display: flex;
@@ -67,6 +69,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Jogo({ children, ...props }, ctx = null) {
     const router = useRouter()
+
     const { token } = router.query
     const share = async () => {
         await Share.share({
@@ -75,69 +78,78 @@ export default function Jogo({ children, ...props }, ctx = null) {
             url: `https://easyimobiliario.com.br/${token}`,
             dialogTitle: 'Compartilhe com seus amigos',
         })
-        .then(() => console.log('Successful share'))
-        .catch((error) => console.log('Error sharing', error));
-}
-  
-    
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+    }
+
+
     const cookie = nookies.get(ctx)
     React.useEffect(() => {
         const cookie = nookies.get(ctx)
         const { token } = router.query
-        
+
         if (token) {
             if (!cookie.Player || cookie.Player == 'undefined') {
                 router.push(`/Jogador/${token}`)
             }
         }
-      
-    },[token, cookie])
-    
+
+    }, [token, cookie])
+
     const { data, error } = useSWR(
         `https://sage-groove-368801.uc.r.appspot.com/api/dadosSala?keyRoom=${cookie.chave}&idPlayer=${cookie.Player}`,
-        fetcher,{ refreshInterval: 10000 }
+        fetcher, { refreshInterval: 10000 }
     )
-    
+
     if (error) return 'error';
     if (!data) return "Loading...";
-   
-   
+
+    const handleClick = () => {
+        const myObject = { name: 'John', age: 30 };
+        router.push({ pathname: '/sair', query: { data: myObject } });
+    };
 
     return (
-        <BaseEasy nav={'none'} title={"Sala "} >
+        <BaseEasy nav={'none'} sala={true} title={"Sala "} >
             <Head>
-            <Script id="Adsense-id" data-ad-client="ca-pub-5434892248042693"
-          async strategy="afterInteractive"
-          onError={(e) => { console.error('Script failed to load', e) }}
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5434892248042693"
-        />
+                <Script id="Adsense-id" data-ad-client="ca-pub-5434892248042693"
+                    async strategy="afterInteractive"
+                    onError={(e) => { console.error('Script failed to load', e) }}
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5434892248042693"
+                />
             </Head>
             <Titulo>Bem Vindo a sala</Titulo>
 
             <SaireToken>
                 <Contatos>
-                {!Capacitor.isNativePlatform() && <span >Compartilhar {token}</span>  }
+                    {!Capacitor.isNativePlatform() &&  <span>Compartilhar {token} </span>}
                     {Capacitor.isNativePlatform() &&
                         <Button onClick={() => share()}>Compartilhar  <ShareIcon /> </Button>
-                     } 
+                    }
                 </Contatos>
-              
-                
-                <Sair data={data}/>
+
+
+                {/* {<Sair data={data} />} */}
+                <Link
+                    href={'/sair'}
+                    passHref
+                    legacyBehavior
+                ><LinkBotoa>Sair</LinkBotoa></Link>
+                 
             </SaireToken>
-            
-           
-           
-            <DadosJogador  data={data} />
-            
+
+
+
+            <DadosJogador data={data} />
+
             <BoxJogadores >
-                <Jogadores data={data}/>
+                <Jogadores data={data} />
 
 
-            </BoxJogadores> 
-            
-             <Extrato />
-            
-        </BaseEasy>)
+            </BoxJogadores>
+
+            <Extrato />
+
+        </BaseEasy >)
 }
 

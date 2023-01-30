@@ -5,7 +5,7 @@ import BaseEasy from '../src/components/BaseEasy/index';
 
 export default function TermosUso() {
     return (
-        <BaseEasy title={"Termos de Uso "} nav={"none"}>
+        <BaseEasy title={"Termos de Uso "} sala={false} nav={"none"}>
             
 
             

@@ -61,7 +61,7 @@ export default function Regras() {
     
 
     return (
-        <BaseEasy title={'Guia de uso - easy imobiliário game'} nav={'flex'}>
+        <BaseEasy title={'Guia de uso - easy imobiliário game'} sala={false} nav={'flex'}>
             <Head>
             <Script id="Adsense-id" data-ad-client="ca-pub-5434892248042693"
           async strategy="afterInteractive"

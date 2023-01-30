@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Topo from "./Header";
 
 
-export default function BaseEasy({ children, title, nav }) {
+export default function BaseEasy({ children, title, nav, sala }) {
     return (
         <>
             <NextSeo nofollow={true}
@@ -54,7 +54,7 @@ export default function BaseEasy({ children, title, nav }) {
                 <title>{title}</title>
 
             </Head>
-            <Topo  children={undefined}  nav={nav} />
+            <Topo sala={sala} children={undefined}  nav={nav} />
             {children}
             <Footer />
         </>

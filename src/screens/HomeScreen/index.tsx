@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <>
-      <BaseEasy title={"Easy Bank - Easy Imobiliário game"} nav={"flex"}  >
+      <BaseEasy title={"Easy Bank - Easy Imobiliário game"} sala={false} nav={"flex"}  >
         <Head>
         <Script id="Adsense-id" data-ad-client="ca-pub-5434892248042693"
           async strategy="afterInteractive"

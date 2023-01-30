@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@capacitor/android": "^4.6.1",
+    "@capacitor/android": "^4.6.2",
     "@capacitor/cli": "^4.6.1",
     "@capacitor/core": "^4.6.1",
     "@capacitor/network": "^4.1.0",

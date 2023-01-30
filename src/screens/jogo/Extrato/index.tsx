@@ -24,7 +24,7 @@ export default function Extrato(ctx = null){
      
     const { data, error } = useSWR(
         `https://sage-groove-368801.uc.r.appspot.com/api/extrato?keyRoom=${cookie.chave}`,
-        fetcher, { refreshInterval: 30000 },
+        fetcher, { refreshInterval: 3000 },
       );
     const [isChecked, setChecked] = react.useState(true)
 

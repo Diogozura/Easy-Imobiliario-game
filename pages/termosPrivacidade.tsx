@@ -10,7 +10,7 @@ import BaseEasy from '../src/components/BaseEasy/index';
 export default function TermosPrivacidade() {
     return (
         <>
-            <BaseEasy title={"Política de Privacidade"} nav={"none"}>
+            <BaseEasy title={"Política de Privacidade"} sala={false} nav={"none"}>
             <Titulo>Política de Privacidade</Titulo> 
             <Bloco>
            

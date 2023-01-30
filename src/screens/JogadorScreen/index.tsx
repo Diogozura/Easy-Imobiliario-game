@@ -64,7 +64,7 @@ export default function Jogador(ctx = null) {
     };
     return (
         <>
-            <BaseEasy title={"Criar Jogador - Easy Imobiliário game"} nav="none">
+            <BaseEasy title={"Criar Jogador - Easy Imobiliário game"} sala={false} nav="none">
                 <Head>
                 <Script id="Adsense-id" data-ad-client="ca-pub-5434892248042693"
           async strategy="afterInteractive"

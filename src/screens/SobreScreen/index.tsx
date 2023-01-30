@@ -66,7 +66,7 @@ export default function Sobre() {
 
  
     return (
-        <BaseEasy title={"Quem Somos?"} nav={"flex"}>
+        <BaseEasy title={"Quem Somos?"} sala={false} nav={"flex"}>
             <Head>
             <Script id="Adsense-id" data-ad-client="ca-pub-5434892248042693"
           async strategy="afterInteractive"
@@ -88,7 +88,7 @@ export default function Sobre() {
 
             </Texto>
 
-            <Titulo >Quem Somos?</Titulo>
+            <Titulo>Quem Somos?</Titulo>
 
             <Texto style={{
                 maxWidth: '600px',
@@ -99,6 +99,7 @@ export default function Sobre() {
                 Somos desenvolvedores da 2eSes tecnology , um projeto que temos como objetivo ajudar seu negocio alavancar, questões de automação e site é com a gente , se quer um projeto pessoa entre em contato
             </Texto>
             <SubTitulo>Para mais informações clique nos cards</SubTitulo>
+
             <div style={{'margin':'auto', 'display':'flex',"justifyContent": "space-around", 'flexWrap': 'wrap' }}>
                 {Dev.map((user) => (
                     <Flippy
@@ -149,6 +150,7 @@ export default function Sobre() {
                 ))}
 
             </div>
+            
         </BaseEasy>
     )
 }

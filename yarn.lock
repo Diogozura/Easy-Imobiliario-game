@@ -137,10 +137,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@capacitor/android@^4.6.1":
-  version "4.6.1"
-  resolved "https://registry.npmjs.org/@capacitor/android/-/android-4.6.1.tgz"
-  integrity sha512-Hnh1tmUr1SP67U6D6ry5I5BEBSN/1nkBAIjQIqf5tF82WNxKbpbC6GfkHE4hMJZinRTrCf36LkrdP8srh7SxoA==
+"@capacitor/android@^4.6.2":
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-4.6.2.tgz#2589525479a07c153f7ffd610684c3145c322aff"
+  integrity sha512-PQpOJnMi0i/d4UrT8bPdfkwlKAlQLgsyo2YKj+iUYjEIu8sKQvqDirLYnpeKhj4cflIG2u9mh/eFncooA+u2gw==
 
 "@capacitor/cli@^4.6.1":
   version "4.6.1"
