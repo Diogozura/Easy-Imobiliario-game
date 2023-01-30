@@ -8,7 +8,6 @@ import useSWR from 'swr'
 import { useRouter } from "next/router";
 import Extrato from './Extrato/index';
 import BaseEasy from '../../components/BaseEasy/index';
-import Sair from "./Sair";
 import { Share } from '@capacitor/share';
 import { Capacitor } from '@capacitor/core';
 import ShareIcon from '@mui/icons-material/Share';
@@ -104,10 +103,7 @@ export default function Jogo({ children, ...props }, ctx = null) {
     if (error) return 'error';
     if (!data) return "Loading...";
 
-    const handleClick = () => {
-        const myObject = { name: 'John', age: 30 };
-        router.push({ pathname: '/sair', query: { data: myObject } });
-    };
+   
 
     return (
         <BaseEasy nav={'none'} sala={true} title={"Sala "} >
