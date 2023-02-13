@@ -59,13 +59,13 @@ export default function App({ Component, pageProps }) {
   Network.addListener('networkStatusChange', status => {
     console.log('Network status changed', status);
   });
-  
+
   const logCurrentNetworkStatus = async () => {
     const status = await Network.getStatus();
     await Toast.show({
       text: `Hello! ${status.connected}`,
     });
-   
+
     return status.connected
   };
   const showHelloToast = async () => {
@@ -75,9 +75,9 @@ export default function App({ Component, pageProps }) {
   };
 
   React.useEffect(() => {
-    
+
     logCurrentNetworkStatus()
-  },[])
+  }, [])
 
   return (
     <>
@@ -91,11 +91,11 @@ export default function App({ Component, pageProps }) {
       />
 
       <Head>
-     
+
         <link rel="canonical" href="https://www.easyimobiliario.com.br" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="msvalidate.01" content="991BF21876522D88EACC46BCD2D994D1" />
-        <meta name="monetag" content="7078ea9dcf38e00b68d3d3a6329e4c3b"/>
+        <meta name="monetag" content="7078ea9dcf38e00b68d3d3a6329e4c3b" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
 
@@ -112,8 +112,21 @@ export default function App({ Component, pageProps }) {
 
           }}
         />
-     
-
+        <div >
+      
+  <script async data-cfasync="false" type="text/javascript" src="https://www.propellerads.com/serve/js.php?z=5720261"></script>
+  <ins  data-zone-id="YOUR_ZONE_ID" data-ad-width="728" data-ad-height="90" data-multi-size="300x250,728x90">
+  </ins>
+  <script>
+  (function() {`
+    var s = document.createElement("script");
+    s.async = true;
+    s.type = "text/javascript";
+    s.src = "https://www.propellerads.com/serve/showads.js";
+    document.getElementsByTagName('head')[0].appendChild(s);
+    `})();
+  </script>
+</div>
 
 
 
