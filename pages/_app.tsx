@@ -112,21 +112,7 @@ export default function App({ Component, pageProps }) {
 
           }}
         />
-        <div >
-      
-  <script async data-cfasync="false" type="text/javascript" src="https://www.propellerads.com/serve/js.php?z=5720261"></script>
-  <ins  data-zone-id="YOUR_ZONE_ID" data-ad-width="728" data-ad-height="90" data-multi-size="300x250,728x90">
-  </ins>
-  <script>
-  (function() {`
-    var s = document.createElement("script");
-    s.async = true;
-    s.type = "text/javascript";
-    s.src = "https://www.propellerads.com/serve/showads.js";
-    document.getElementsByTagName('head')[0].appendChild(s);
-    `})();
-  </script>
-</div>
+
 
 
 
