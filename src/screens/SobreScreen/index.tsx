@@ -97,7 +97,7 @@ export default function Sobre() {
                 margin: 'auto',
             }}>
                 Somos desenvolvedores da 2eSes tecnology , um projeto que temos como objetivo ajudar seu negocio alavancar, questões de automação e site é com a gente , se quer um projeto pessoa entre em contato .
-              
+               
                
             </Texto>
             <Typography sx={{textAlign:'center', margin:'auto'}}>
