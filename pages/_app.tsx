@@ -94,8 +94,7 @@ export default function App({ Component, pageProps }) {
 
         <link rel="canonical" href="https://www.easyimobiliario.com.br" />
         <link rel="icon" href="/favicon.ico" />
-        <meta name="msvalidate.01" content="991BF21876522D88EACC46BCD2D994D1" />
-        <meta name="monetag" content="7078ea9dcf38e00b68d3d3a6329e4c3b" />
+        
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
 
@@ -112,22 +111,6 @@ export default function App({ Component, pageProps }) {
 
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-4JHHYSLB83');
-            `
-
-          }}
-        />
-
-<script src="//" data-cfasync="false" async />
-
-<script src="https://sotchoum.com/4/5720793" data-cfasync="false" async />
       </Head>
 
       <ToastContainer />
