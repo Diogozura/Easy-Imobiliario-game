@@ -112,8 +112,20 @@ export default function App({ Component, pageProps }) {
 
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+             window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-4JHHYSLB83');
+            `
 
+          }}
+        />
 
+<script src="//" data-cfasync="false" async />
 
 
       </Head>
