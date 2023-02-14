@@ -133,7 +133,7 @@ export default function App({ Component, pageProps }) {
       <ToastContainer />
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-
+      
         <Component {...pageProps} />
       </ThemeProvider>
     </>

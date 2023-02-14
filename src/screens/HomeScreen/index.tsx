@@ -39,7 +39,7 @@ export default function Home() {
            <meta name="description" content="Easy bank, uma nova maneira de jogar banco imobiliário, confira agora o nosso game"/>
        </Head>
         <Conteudo>
-
+        <script async data-cfasync="false" src="//ophoacit.com/1?z=5720848"/>
           <Parte margiBaixo="7.5em"
             alinhamento="center">
             <Box >
