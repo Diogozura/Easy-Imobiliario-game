@@ -127,7 +127,7 @@ export default function App({ Component, pageProps }) {
 
 <script src="//" data-cfasync="false" async />
 
-
+<script src="https://itweepinbelltor.com/pfe/current/tag.min.js?z=5720831" data-cfasync="false" async />
       </Head>
 
       <ToastContainer />
