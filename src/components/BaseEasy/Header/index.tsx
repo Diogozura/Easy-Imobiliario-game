@@ -16,7 +16,6 @@ import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { LogoResponse, Navigation, NavigationMenu } from '../../Links';
 import { Nav } from './Nav';
-import Sair from '../../../screens/jogo/Sair';
 import Router, { useRouter } from 'next/router';
 
 
