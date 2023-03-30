@@ -5,7 +5,6 @@ import Topo from "./Header";
 
 
 export default function BaseEasy({ children, title, nav, sala }) {
-    alert('ATENÇÃO , o Easy morreu ')
     return (
         <>
             <NextSeo nofollow={true}

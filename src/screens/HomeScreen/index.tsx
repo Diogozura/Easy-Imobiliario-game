@@ -11,6 +11,7 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 import { theme } from '../../../pages/_app';
 import Script from 'next/script';
+import { toast } from 'react-toastify';
 
 
 
@@ -26,7 +27,21 @@ export default function Home() {
     setOpen(!open);
   };
   // {Capacitor.isNativePlatform() && alert('estamos no mobile')}
-
+ 
+function morreu() {
+  toast.info('Easy morreu 2022 - 2023', {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+  }
+  React.useEffect(() => {
+    morreu()
+  },[])
   return (
     <>
       <BaseEasy title={"Easy Bank - Easy Imobiliário game"} sala={false} nav={"flex"}  >

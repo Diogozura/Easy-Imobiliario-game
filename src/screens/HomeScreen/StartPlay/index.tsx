@@ -11,6 +11,7 @@ import { authService } from '../../../services/auth/authService'
 import { Box, Text } from '../styledHome/index';
 import { Botaoq } from '..'
 import Link from 'next/link'
+
 // import { Botao, Botaoq } from '../index';
 
 const Form = styled.form`
@@ -35,8 +36,8 @@ export const A = styled.a`
 
 export default function StartPlay(ctx = null) {
     const cookie = nookies.get(ctx)
-
- 
+    
+    
     React.useEffect(() => {
         if (cookie.chave == 'undefined') {
             cookie.chave = ''
@@ -111,7 +112,7 @@ export default function StartPlay(ctx = null) {
                 <A
                     bgBotao="#22192c"
                     color="white"
-                    href='/authtoken'
+                    href='/'
                     handleToggle={handleToggle}
                     onClick={onSubmit}
                 >
@@ -126,7 +127,7 @@ export default function StartPlay(ctx = null) {
         <CircularProgress color="inherit" />
       </Backdrop>
             </Form>
-            <Botaoq onClick={handleToggle} color={'#22192C'}  href={"/criarSala"}>Criar Sala</Botaoq>
+            <Botaoq onClick={handleToggle} color={'#22192C'}  href={"/"}>Criar Sala</Botaoq>
         </Box>
 
 

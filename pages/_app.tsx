@@ -75,11 +75,12 @@ export default function App({ Component, pageProps }) {
   };
 
   React.useEffect(() => {
-
+  
     logCurrentNetworkStatus()
   }, [])
 
   return (
+    
     <>
       <SocialProfileJsonLd
         type="Person"
