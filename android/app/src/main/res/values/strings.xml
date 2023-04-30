@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">easy mobile</string>
-    <string name="title_activity_main">easy mobile</string>
-    <string name="package_name">easyimobiliario.com</string>
-    <string name="custom_url_scheme">easyimobiliario.com</string>
-</resources>
