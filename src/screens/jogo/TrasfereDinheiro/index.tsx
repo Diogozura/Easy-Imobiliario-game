@@ -61,7 +61,7 @@ export default function TransfereDinheiro({ data }, ctx = null) {
     setChecked(childdata);
   }
 
-
+console.log('data', data)
 
   const style = {
     position: 'absolute' as 'absolute',
@@ -102,17 +102,17 @@ export default function TransfereDinheiro({ data }, ctx = null) {
 
   const user = () => {
     return (
-      <AvatarCores key={data.idPlayer}>
+      <AvatarCores key={data.idJogador}>
         <FormControlLabel
           name="user"
-          value={data.idPlayer}
+          value={data.idJogador}
           control={
             <Radio />}
 
           label={
             <>
               {data.playerBank ? <Image src={`/avatar/B${data.identificador}.svg`} width="80" height="80" alt={`${data.identificador}`} /> : <Image src={`/avatar/${data.identificador}.svg`} width="80" height="80" alt={`${data.identificador}`} />}
-              <Name>{data.namePlayer}</Name>
+              <Name>{data.nomeJogador}</Name>
             </>
           }
           labelPlacement="top"
@@ -174,7 +174,7 @@ export default function TransfereDinheiro({ data }, ctx = null) {
             <Form onSubmit={(event) => {
               event.preventDefault();
               authService.transfereDinheiro({
-                idPlayerPara: parseInt(values.user),
+                idJogadorPara: parseInt(values.user),
                 valor: parseInt(values.valor),
               })
                 .then((res) => {
@@ -215,19 +215,19 @@ export default function TransfereDinheiro({ data }, ctx = null) {
               >
                 <AvatarCores style={{ 'marginTop': '20px' }}>
                   {isChecked ?  banco(): user()}
-                  {data.players?.map((cor) => (
+                  {data.jogadores?.map((cor) => (
                     <Coress>
 
                       <FormControlLabel
                         name="user"
-                        value={cor.idPlayer}
+                        value={cor.id_jogador}
                         control={<Radio />}
                         label={<>
                           <Image
                             width={80}
                             height={80}
                             src={`/avatar/${cor.identificador}.svg`} alt={`${cor.identificador}`} />
-                          <Name>{cor.namePlayer}</Name>
+                          <Name>{cor.nome_jogador}</Name>
                         </>}
                         labelPlacement="top"
                       />

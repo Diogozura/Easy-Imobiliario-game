@@ -15,7 +15,7 @@ import { Texto } from "../../components/Textos";
 import { AvatarCores, Coress, Form } from "../../components/Icones";
 import { tokenService } from "../../services/auth/tokenService";
 import TextField from '@mui/material/TextField';
-import { Button, FormControlLabel, FormLabel, Input, Radio, RadioGroup } from '@mui/material';
+import { Box, Button, FormControlLabel, FormLabel, Input, Radio, RadioGroup } from '@mui/material';
 import Head from "next/head";
 import Script from "next/script";
 
@@ -35,10 +35,12 @@ export default function Jogador(ctx = null) {
             tokenService.save(jogador, '', '')
         }
     }, [jogador])
+
+    console.log(cookie.chave)
     const restaCores = useCores()
 
     const cor = restaCores.data?.coresRestante
-
+console.log('cores', cor)
     const [values, setValues] = React.useState({
         usuario: '',
         cor: '',
@@ -54,7 +56,6 @@ export default function Jogador(ctx = null) {
             }
         })
     }
-
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
@@ -72,6 +73,11 @@ export default function Jogador(ctx = null) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5434892248042693"
         />
                 </Head>
+                <Box component={'main'}
+                    height={'100vh'}
+                >
+
+                
                 <Titulo>Hora de Criar Jogador</Titulo>
                 <BoxTexto>
                     <Texto>
@@ -82,7 +88,7 @@ export default function Jogador(ctx = null) {
                     event.preventDefault()
                     authService.criarJogador({
                         identificador: values.cor,
-                        namePlayer: values.usuario,
+                        nomeJogador: values.usuario,
                     })
 
                         .then(() => {
@@ -141,7 +147,8 @@ export default function Jogador(ctx = null) {
                     >
                         <CircularProgress color="inherit" />
                     </Backdrop>
-                </Form>
+                    </Form>
+                    </Box>
             </BaseEasy>
         </>
     )

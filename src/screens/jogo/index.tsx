@@ -16,6 +16,7 @@ import Head from "next/head";
 import Script from "next/script";
 import Link from "next/link";
 import { LinkBotoa } from "../../components/Botao";
+import { Box } from "@mui/material";
 
 const BoxJogadores = styled.section`
     display: flex;
@@ -96,7 +97,7 @@ export default function Jogo({ children, ...props }, ctx = null) {
     }, [token, cookie])
 
     const { data, error } = useSWR(
-        `https://sage-groove-368801.uc.r.appspot.com/api/dadosSala?keyRoom=${cookie.chave}&idPlayer=${cookie.Player}`,
+        `https://fonidaiane.pythonanywhere.com/easyBankImobiliario/api/dados_sala?keySala=${cookie.chave}&idJogador=${cookie.Player}`,
         fetcher, { refreshInterval: 10000 }
     )
 
@@ -104,7 +105,7 @@ export default function Jogo({ children, ...props }, ctx = null) {
     if (!data) return "Loading...";
 
    
-
+console.log('data',data.jogadores.length)
     return (
         <BaseEasy nav={'none'} sala={true} title={"Sala "} >
             <Head>
@@ -114,6 +115,9 @@ export default function Jogo({ children, ...props }, ctx = null) {
                     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5434892248042693"
                 />
             </Head>
+            <Box component={'main'} height={data.jogadores.length >= 1 ? 'none' : '100vh'}>
+
+           
             <Titulo>Bem Vindo a sala</Titulo>
 
             <SaireToken>
@@ -145,7 +149,7 @@ export default function Jogo({ children, ...props }, ctx = null) {
             </BoxJogadores>
 
             <Extrato />
-
+            </Box>
         </BaseEasy >)
 }
 

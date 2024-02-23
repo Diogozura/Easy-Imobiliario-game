@@ -25,8 +25,6 @@ import Script from 'next/script';
 
 
 
-
-
 interface CustomProps {
   onChange: (event: { target: { name: string; value: string } }) => void;
   name: string;
@@ -73,7 +71,7 @@ export default function Criar() {
     setOpen(!open);
   };
   const router = useRouter()
-  const { data: chave } = useFetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/createRoom`)
+  const { data: chave } = useFetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/chave_sala`)
   const { data: cor } = useFetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/cores`)
 
 
@@ -101,20 +99,21 @@ export default function Criar() {
         [fieldName]: fieldValue
       }
     })
-
   }
+
+
   const submit = (event) => {
     event.preventDefault()
     handleToggle()
     authService.criarSala({
-      keyRoom: chave.keyRoom,
-      valorInicial: values.valor,
+      keySala: chave.code,
+      valorInicial: Number(values.valor),
       identificador: values.cor,
-      namePlayer: values.nome,
+      nomeJogador: values.nome,
     })
 
       .then(() => {
-        router.push(`/sala/${chave.keyRoom}`)
+        router.push(`/sala/${chave.code}`)
       })
       .catch((err) => {
         alert("preencha todos os campos")
@@ -191,7 +190,7 @@ export default function Criar() {
           </AvatarCores>
 
         </RadioGroup>
-        {/* <p>Código da Sala: {chave.keyRoom}</p> */}
+        <p>Código da Sala: {chave.code}</p>
         <A
                     bgBotao="#22192c"
                     color="white"

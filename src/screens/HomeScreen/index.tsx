@@ -26,22 +26,9 @@ export default function Home() {
   const handleToggle = () => {
     setOpen(!open);
   };
-  // {Capacitor.isNativePlatform() && alert('estamos no mobile')}
+  {Capacitor.isNativePlatform() && alert('estamos no mobile')}
  
-function morreu() {
-  toast.info('Easy morreu 2022 - 2023', {
-    position: "top-center",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-  });
-  }
-  React.useEffect(() => {
-    morreu()
-  },[])
+
   return (
     <>
       <BaseEasy title={"Easy Bank - Easy Imobiliário game"} sala={false} nav={"flex"}  >

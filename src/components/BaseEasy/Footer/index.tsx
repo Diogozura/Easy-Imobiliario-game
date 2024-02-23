@@ -52,8 +52,8 @@ const Links = [{
 },
 {
     "id": '5',
-    "link": "https://2esestechnology.com.br/",
-    "name": "Desenvolvido por 2eSes"
+    "link": "https://easycalculos.com.br/",
+    "name": "Desenvolvido por Easy calculos"
 },
 ]
 

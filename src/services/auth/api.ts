@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://ffgames134.herokuapp.com/",
+  baseURL: "https://fonidaiane.pythonanywhere.com/easyBankImobiliario/",
 });
 
 export default api;

@@ -4,7 +4,7 @@ import nookies from 'nookies'
 
 export const authService = {
     async criar() {
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/createRoom`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chave_sala`, {
             method: 'GET',   
         })
             .then(async (respostaDoServidor) => {
@@ -14,21 +14,21 @@ export const authService = {
             })
     },
 
-    async criarSala({ keyRoom, valorInicial, identificador, namePlayer }) {
+    async criarSala({ keySala, valorInicial, identificador, nomeJogador }) {
         
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/SaveRoomPlayer`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/salva_sala`, {
             method: 'POST',
             body: {
-                keyRoom,
+                keySala,
                 valorInicial,
                 identificador,
-                namePlayer,
+                nomeJogador,
             }
         })
             .then(async (respostaDoServidor) => {
                 if (!respostaDoServidor.ok) throw new Error("preencha todos os dados")
                 const body = respostaDoServidor.body;
-                tokenService.save(keyRoom, body.idPlayer, ''  || null)
+                tokenService.save(keySala, body.idJogador, ''  || null)
     
                 return body
             })
@@ -48,18 +48,18 @@ export const authService = {
 
     },
 
-    async criarJogador({ identificador, namePlayer }, ctx = null) {
+    async criarJogador({ identificador, nomeJogador }, ctx = null) {
         const cookie = nookies.get(ctx)
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/createPlayer?keyRoom=${cookie.chave}`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/salva_jogador?keySala=${cookie.chave}`, {
             method: 'POST',
             body: {
                 identificador,
-                namePlayer,
+                nomeJogador,
             }
         })
             .then((res) => {
                 if (!res.ok) throw new Error(res.body.erro)
-                tokenService.save(cookie.chave, res.body.idPlayer, '' )
+                tokenService.save(cookie.chave, res.body.idJogador, '' )
                 
             })
 
@@ -68,7 +68,7 @@ export const authService = {
     async dadosPlayer(ctx = null) {
         const cookie = nookies.get(ctx)
         
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/dadosSala?keyRoom=${cookie.chave}&idPlayer=${cookie.Player}`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/dados_sala?keySala=${cookie.chave}&idPlayer=${cookie.Player}`, {
             method: 'GET',
         })
             .then((resposta) => {
@@ -76,16 +76,16 @@ export const authService = {
             })
     },
 
-    async transfereDinheiro({ idPlayerPara,valor}, ctx = null) {
+    async transfereDinheiro({ idJogadorPara,valor}, ctx = null) {
         const cookie = nookies.get(ctx)
         const userDe =  `${cookie.banco === '0' ? 0 : cookie.Player }`
         
         
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/transferencia?keyRoom=${cookie.chave}`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/transferencia?keySala=${cookie.chave}`, {
             method: 'POST',  
             body: {
-                idPlayerDe: JSON.parse(userDe),
-                idPlayerPara,
+                idJogadorDe: JSON.parse(userDe),
+                idJogadorPara,
                 valor,
             }
         })
@@ -99,7 +99,7 @@ export const authService = {
     async TrocaPlayer({ idPlayerPara }, ctx = null) {
         const cookie = nookies.get(ctx)
 
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/troca_player_banc?keyRoom=${cookie.chave}`,{
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/troca_player_banc?keySala=${cookie.chave}`,{
             method: 'POST',
             body: {
                 idPlayerDe: cookie.Player,
@@ -110,7 +110,7 @@ export const authService = {
     async Sair( ctx = null) {
         const cookie = nookies.get(ctx)
 
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/quitPlayer?keyRoom=${cookie.chave}&idPlayer=${cookie.Player}`,{
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/quitPlayer?keySala=${cookie.chave}&idPlayer=${cookie.Player}`,{
             method: 'DELETE',
            
         })
@@ -118,7 +118,7 @@ export const authService = {
     async coresRestantes(ctx = null) {
         const cookie = nookies.get(ctx)
         
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/coresRestantes?keyRoom=${cookie.chave}`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/coresrestantes/?keySala=${cookie.chave}`, {
             method: 'GET',
         })
             .then((resposta) => {
@@ -131,7 +131,7 @@ export const authService = {
     },
     async extrato(ctx = null) {
         const cookie = nookies.get(ctx)
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/extrato/?keyRoom=${cookie.chave}`, {
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/extrato/?keySala=${cookie.chave}`, {
             headers : { 
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

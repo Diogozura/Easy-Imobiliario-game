@@ -14,13 +14,13 @@ export const NomePlayer = styled.h2`
 `
 
 export function DadosJogador({ data }) {
-
+console.log('data',data)
     return (
         <BoxJogador>
             {/* parte onde fica o nome e ícone do usuário  */}
             <NomeeIcon>
                 <picture>{data.playerBank ? <Image src={`/avatar/B${data.identificador}.svg`} width="80" height="80" alt={''} /> : <Image src={`/avatar/${data.identificador}.svg`} width="60" height="60" alt={''} />}</picture>
-                <NomePlayer>{data.namePlayer}</NomePlayer>
+                <NomePlayer>{data.nome_jogador}</NomePlayer>
             </NomeeIcon>
 
             <Box>

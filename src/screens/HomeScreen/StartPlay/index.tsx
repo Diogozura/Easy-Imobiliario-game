@@ -75,6 +75,7 @@ export default function StartPlay(ctx = null) {
     }
     function onSubmit(event) {
         event.preventDefault();    
+        console.log(values)
         router.push({
             pathname: '/authtoken',
             query: { pid : values.pid },
@@ -87,10 +88,10 @@ export default function StartPlay(ctx = null) {
             shadow="2px 2px 5px 1px rgb(0 0 0 / 64%);"
             padding="30px"
         >
-            {/* <Text>
+            <Text>
                 Para começar coloque o Código da
                 sala ou crie sua própria
-            </Text> */}
+            </Text>
             <Text>
                 <strong>Código da Sala</strong>
             </Text>
@@ -112,7 +113,7 @@ export default function StartPlay(ctx = null) {
                 <A
                     bgBotao="#22192c"
                     color="white"
-                    href='/'
+                    href='/sala'
                     handleToggle={handleToggle}
                     onClick={onSubmit}
                 >
@@ -127,7 +128,7 @@ export default function StartPlay(ctx = null) {
         <CircularProgress color="inherit" />
       </Backdrop>
             </Form>
-            <Botaoq onClick={handleToggle} color={'#22192C'}  href={"/"}>Criar Sala</Botaoq>
+            <Botaoq onClick={handleToggle} color={'#22192C'}  href={"/criarSala"}>Criar Sala</Botaoq>
         </Box>
 
 
