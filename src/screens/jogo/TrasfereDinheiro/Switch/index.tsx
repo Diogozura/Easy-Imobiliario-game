@@ -42,7 +42,7 @@ const Android12Switch = styled(Switch)(({ theme }) => ({
 export default function Switchcase({childToParent , data},ctx = null) {
     const [isChecked, setChecked] = React.useState(false)
     const cookie = nookies.get(ctx)
-    // console.log('swite', data)
+ 
     tokenService.save(cookie.chave, cookie.Player, isChecked ? 0 : data.idJogador)
     const handleCheck = () => {
         setChecked((preventState) => !preventState)

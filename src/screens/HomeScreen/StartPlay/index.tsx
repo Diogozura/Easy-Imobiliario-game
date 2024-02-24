@@ -76,6 +76,7 @@ export default function StartPlay(ctx = null) {
     function onSubmit(event) {
         event.preventDefault();    
         console.log(values)
+        tokenService.save(cookie.chave, cookie.Player,  0 )
         router.push({
             pathname: '/authtoken',
             query: { pid : values.pid },

@@ -110,7 +110,7 @@ export const authService = {
     async Sair( ctx = null) {
         const cookie = nookies.get(ctx)
 
-        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/quitPlayer?keySala=${cookie.chave}&idPlayer=${cookie.Player}`,{
+        return HttpClient(`${process.env.NEXT_PUBLIC_BACKEND_URL}api/quit_jogador?keySala=${cookie.chave}&idJogador=${cookie.Player}`,{
             method: 'DELETE',
            
         })

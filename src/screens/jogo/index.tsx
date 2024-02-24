@@ -17,6 +17,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { LinkBotoa } from "../../components/Botao";
 import { Box } from "@mui/material";
+import { tokenService } from "../../services/auth/tokenService";
 
 const BoxJogadores = styled.section`
     display: flex;
@@ -85,16 +86,30 @@ export default function Jogo({ children, ...props }, ctx = null) {
 
     const cookie = nookies.get(ctx)
     React.useEffect(() => {
-        const cookie = nookies.get(ctx)
-        const { token } = router.query
-
+        const cookie = nookies.get(ctx);
+    
         if (token) {
-            if (!cookie.Player || cookie.Player == 'undefined') {
-                router.push(`/Jogador/${token}`)
-            }
+          if (!cookie.Player || cookie.Player === 'undefined') {
+            router.push(`/Jogador/${token}`);
+          }
         }
-
-    }, [token, cookie])
+    
+        // Verifica se algum jogador na lista tem o ID desejado
+        if (cookie.Player && cookie.chave) {
+          const url = `https://fonidaiane.pythonanywhere.com/easyBankImobiliario/api/dados_sala?keySala=${cookie.chave}`;
+    
+          fetch(url)
+            .then(response => response.json())
+              .then(data => {    
+                  if (!data.jogadores.find(jogador => jogador.id_jogador === parseInt(cookie.Player))) {
+                    router.push(`/Jogador/${token}`);
+                  }
+            })
+            .catch(error => {
+              console.error('Erro ao obter dados da sala:', error);
+            });
+        }
+      }, [token, cookie]);
 
     const { data, error } = useSWR(
         `https://fonidaiane.pythonanywhere.com/easyBankImobiliario/api/dados_sala?keySala=${cookie.chave}&idJogador=${cookie.Player}`,
@@ -105,7 +120,7 @@ export default function Jogo({ children, ...props }, ctx = null) {
     if (!data) return "Loading...";
 
    
-console.log('data',data.jogadores.length)
+
     return (
         <BaseEasy nav={'none'} sala={true} title={"Sala "} >
             <Head>

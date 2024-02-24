@@ -28,7 +28,7 @@ const style = {
     // Call an external API endpoint to get posts.
     // You can use any data fetching library
     const cookie = nookies.get(ctx)
-    const res = await fetch(`https://sage-groove-368801.uc.r.appspot.com/api/dadosSala?keyRoom=${cookie.chave}&idPlayer=${cookie.Player}`)
+    const res = await fetch(`https://fonidaiane.pythonanywhere.com/easyBankImobiliario/api/dados_sala?keySala=${cookie.chave}&idJogador=${cookie.Player}`)
     const data = await res.json()
   
     // By returning { props: { posts } }, the Blog component
